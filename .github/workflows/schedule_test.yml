@@ -1,0 +1,14 @@
+name: schedule-test
+
+on:
+  schedule:
+    - cron: '32 4 * * *'   # 示例：北京时间 11:17
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "schedule triggered"
+          date -u
